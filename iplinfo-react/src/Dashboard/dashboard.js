@@ -4,10 +4,9 @@ import {
   Switch,
   Route,
   Link,
-  useParams
+  //useParams
 } from "react-router-dom";
 
-import SeriesInfoByYear from './seriesInfo.js';
 import FetchSeriesInfo from './seriesInfoTable.js';
 
 export default function ParamsExample() {
@@ -17,8 +16,8 @@ export default function ParamsExample() {
     <Router>
       <div>
         <nav className="navbar navbar-light bg-light">
-          <span className="navbar-brand mb-0 h1"><Link to="/2008">Season 2008</Link></span>
-          <span className="navbar-brand mb-0 h1"><Link to="/2009">Season 2009</Link></span>
+          <span className="navbar-brand mb-0 h1"> <Link to="/2008">Season 2008</Link></span>
+          <span className="navbar-brand mb-0 h1"><Link to="/2009" >Season 2009</Link></span>
           <span className="navbar-brand mb-0 h1"><Link to="/2010">Season 2010</Link></span>
           <span className="navbar-brand mb-0 h1"><Link to="/2011">Season 2011</Link></span>
           <span className="navbar-brand mb-0 h1"><Link to="/2012">Season 2012</Link></span>
@@ -32,21 +31,28 @@ export default function ParamsExample() {
         </nav>
 
         <Switch>
-          <Route path="/:id" children={<Child /> } />
+          <Route path="/:handle" component={FetchSeriesInfo} />
         </Switch>
       </div>
     </Router>
   );
 }
 
-function Child() {
-  // We can use the `useParams` hook here to access
-  // the dynamic pieces of the URL.
-  let { id } = useParams();
-
-  return (
-    <div>
-      <SeriesInfoByYear year={id}/>
-    </div>
-  );
-}
+// function Hello(){
+//
+//   console.log("Clicked");
+//   return ( <h1> Avi </h1>);
+// }
+//
+//
+// function Child() {
+//   // We can use the `useParams` hook here to access
+//   // the dynamic pieces of the URL.
+//   let { id } = useParams();
+//   return (
+//     <div>
+//
+//       <FetchSeriesInfo season={id}/>
+//     </div>
+//   );
+// }

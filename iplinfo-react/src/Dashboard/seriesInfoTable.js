@@ -5,14 +5,15 @@ import MatchInfo from './matchInfo.js'
 
 export default class FetchSeriesInfo extends React.Component {
 
-
+  //Intializing State
   constructor(props){
     super(props);
     this.state = {
       iplMatch: []
     }
   }
-
+  
+  //Axios Get Call
   componentDidMount(){
     const { match: { params } } = this.props;
 
@@ -31,9 +32,7 @@ export default class FetchSeriesInfo extends React.Component {
 
   }
 
-  // populateRowsWithData = () => {
-  //
-  // }
+  //Tampering Json Data and Populating Json
 
   populateRowsWithData = () => {
     const iplMatch = this.state.iplMatch.map(ipl => {
@@ -54,14 +53,14 @@ export default class FetchSeriesInfo extends React.Component {
       return iplMatch
     }
 
-
     render() {
-
 
       return (
         <div>
+          <h1 className="text-primary text-center">
+            IPL T20 Year {this.props.match.params.handle}
+          </h1>
 
-          <h1 className="text-primary text-center">IPL T20 Year {this.props.match.params.handle}</h1> 
           <table className="table table-striped">
             <thead>
               <tr>
@@ -72,10 +71,9 @@ export default class FetchSeriesInfo extends React.Component {
                 <th scope="col">Man of the Match</th>
               </tr>
             </thead>
-
-          {this.populateRowsWithData()}
+            {this.populateRowsWithData()}
           </table>
         </div>
-  );
-}
+      );
+    }
 }

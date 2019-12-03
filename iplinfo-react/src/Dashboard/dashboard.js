@@ -37,22 +37,3 @@ export default function ParamsExample() {
     </Router>
   );
 }
-
-// function Hello(){
-//
-//   console.log("Clicked");
-//   return ( <h1> Avi </h1>);
-// }
-//
-//
-// function Child() {
-//   // We can use the `useParams` hook here to access
-//   // the dynamic pieces of the URL.
-//   let { id } = useParams();
-//   return (
-//     <div>
-//
-//       <FetchSeriesInfo season={id}/>
-//     </div>
-//   );
-// }

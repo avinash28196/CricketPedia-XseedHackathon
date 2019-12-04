@@ -12,7 +12,7 @@ export default class FetchSeriesInfo extends React.Component {
       iplMatch: []
     }
   }
-  
+
   //Axios Get Call
   componentDidMount(){
     const { match: { params } } = this.props;
